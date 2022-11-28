@@ -2,7 +2,7 @@ import React from "react";
 
 const InputArea = ({ setUser, users, count, setCount }) => {
   const add = () => {
-    if (document.querySelector(".title-input") !== "") {
+    if (document.querySelector(".title-input").value !== "") {
       setUser([
         ...users,
         {
