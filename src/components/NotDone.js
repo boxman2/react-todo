@@ -2,11 +2,11 @@ import React from "react";
 
 const NotDone = ({ user, setUser }) => {
   const deleteDone = (num) => {
-    setUser((users) => users.filter((user) => num !== user.id));
+    setUser((ㄹ) => ㄹ.filter((user) => num !== user.id));
   };
   const completeDone = (num) => {
-    setUser((users) =>
-      users.map((user) =>
+    setUser((ㅇ) =>
+      ㅇ.map((user) =>
         user.id === num ? { ...user, isDone: !user.isDone } : user
       )
     );

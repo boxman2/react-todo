@@ -5,9 +5,13 @@ import Done from "./components/Done";
 import NotDone from "./components/NotDone";
 import InputArea from "./components/InputArea";
 
+//모듈화 ,재사용 용이하게
+//직관성떨어지고 협업하기 어렵다
+
 function App() {
   const [users, setUser] = useState([]);
   const [count, setCount] = useState(0);
+
   useEffect(() => {
     console.log(users);
   }, [users]);
@@ -32,7 +36,7 @@ function App() {
         <h2>DONE</h2>
         <div className="done">
           {users.map((a) => {
-            return a.isDone === true ? (
+            return a.isDone ? (
               <Done user={a} setUser={setUser} key={a.id} />
             ) : null;
           })}
