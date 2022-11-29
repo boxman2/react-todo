@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import "./App.css";
 import Navbar from "./components/Navbar";
 import Done from "./components/Done";
@@ -11,9 +11,6 @@ function App() {
   const [users, setUser] = useState([]);
   const [count, setCount] = useState(0);
 
-  useEffect(() => {
-    console.log(users);
-  }, [users]);
   return (
     <div className="layout">
       <Navbar />
@@ -27,22 +24,18 @@ function App() {
         <h2>NOT DONE</h2>
         <div className="not-done">
           {users.map((a) => {
-            return a.isDone === false ? (
-              <Done state={"완료"} user={a} setUser={setUser} key={a.id} />
+            let { isDone, id } = a;
+            return !isDone ? (
+              <Done state={"완료"} user={a} setUser={setUser} key={id} />
             ) : null;
           })}
         </div>
         <h2>DONE</h2>
         <div className="done">
           {users.map((a) => {
-            return a.isDone ? (
-              <Done
-                className="red"
-                state={"취소"}
-                user={a}
-                setUser={setUser}
-                key={a.id}
-              />
+            let { isDone, id } = a;
+            return isDone ? (
+              <Done state={"취소"} user={a} setUser={setUser} key={id} />
             ) : null;
           })}
         </div>

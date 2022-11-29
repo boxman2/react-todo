@@ -2,17 +2,17 @@ import React from "react";
 
 const Done = ({ user, setUser, state }) => {
   const deleteDone = (num) => {
-    setUser((ㄹ) => ㄹ.filter((user) => num !== user.id));
+    setUser((item) => item.filter((user) => num !== user.id));
   };
   const completeDone = (num) => {
-    setUser((ㅇ) =>
-      ㅇ.map((user) =>
+    setUser((item) =>
+      item.map((user) =>
         user.id === num ? { ...user, isDone: !user.isDone } : user
       )
     );
   };
   return (
-    <div className="box">
+    <div className={user.isDone ? "box red" : "box"}>
       <h2>{user.title}</h2>
       <div>{user.body}</div>
       <div className="buttons">
