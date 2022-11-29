@@ -1,6 +1,6 @@
 import React from "react";
 
-const Done = ({ user, setUser }) => {
+const Done = ({ user, setUser, state }) => {
   const deleteDone = (num) => {
     setUser((ㄹ) => ㄹ.filter((user) => num !== user.id));
   };
@@ -12,7 +12,7 @@ const Done = ({ user, setUser }) => {
     );
   };
   return (
-    <div className="box red">
+    <div className="box">
       <h2>{user.title}</h2>
       <div>{user.body}</div>
       <div className="buttons">
@@ -30,7 +30,7 @@ const Done = ({ user, setUser }) => {
             completeDone(user.id);
           }}
         >
-          취소
+          {state}
         </button>
       </div>
     </div>

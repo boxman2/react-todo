@@ -2,7 +2,6 @@ import { useEffect, useState } from "react";
 import "./App.css";
 import Navbar from "./components/Navbar";
 import Done from "./components/Done";
-import NotDone from "./components/NotDone";
 import InputArea from "./components/InputArea";
 
 //모듈화 ,재사용 용이하게
@@ -29,7 +28,7 @@ function App() {
         <div className="not-done">
           {users.map((a) => {
             return a.isDone === false ? (
-              <NotDone user={a} setUser={setUser} key={a.id} />
+              <Done state={"완료"} user={a} setUser={setUser} key={a.id} />
             ) : null;
           })}
         </div>
@@ -37,7 +36,13 @@ function App() {
         <div className="done">
           {users.map((a) => {
             return a.isDone ? (
-              <Done user={a} setUser={setUser} key={a.id} />
+              <Done
+                className="red"
+                state={"취소"}
+                user={a}
+                setUser={setUser}
+                key={a.id}
+              />
             ) : null;
           })}
         </div>
