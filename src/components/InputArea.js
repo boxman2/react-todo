@@ -20,7 +20,7 @@ const InputArea = ({ setTodos, todos, count, setCount }) => {
           isDone: false,
         },
       ]);
-      setCount(count + 1);
+      setCount(Number(count) + 1);
       setInput({ title: "", body: "" });
     }
   };
