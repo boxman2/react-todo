@@ -1,6 +1,8 @@
-import React, { useState } from "react";
+import React, { useState, useContext } from "react";
+import { ThemeContext } from "../context/ThemeContext";
 
-const InputArea = ({ setTodos, todos, count, setCount }) => {
+const InputArea = () => {
+  const { setTodos, todos, count, setCount } = useContext(ThemeContext);
   const [input, setInput] = useState({ title: "", body: "" });
 
   const handleInput = (e) => {

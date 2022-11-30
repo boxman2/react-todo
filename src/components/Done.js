@@ -1,9 +1,13 @@
-import React from "react";
+import React, { useContext } from "react";
+import { ThemeContext } from "../context/ThemeContext";
 
-const Done = ({ user, setTodos, state }) => {
+const Done = ({ user, state }) => {
+  const { setTodos } = useContext(ThemeContext);
+  let { isDone, title, body, id } = user;
   const deleteDone = (num) => {
     setTodos((item) => item.filter((user) => num !== user.id));
   };
+
   const completeDone = (num) => {
     setTodos((item) =>
       item.map((user) =>
@@ -12,14 +16,14 @@ const Done = ({ user, setTodos, state }) => {
     );
   };
   return (
-    <div className={user.isDone ? "box red" : "box"}>
-      <h2>{user.title}</h2>
-      <div>{user.body}</div>
+    <div className={isDone ? "box red" : "box"}>
+      <h2>{title}</h2>
+      <div>{body}</div>
       <div className="buttons">
         <button
           className="delete-button"
           onClick={() => {
-            deleteDone(user.id);
+            deleteDone(id);
           }}
         >
           삭제하기
@@ -27,7 +31,7 @@ const Done = ({ user, setTodos, state }) => {
         <button
           className="success-button"
           onClick={() => {
-            completeDone(user.id);
+            completeDone(id);
           }}
         >
           {state}
