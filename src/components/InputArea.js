@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 
-const InputArea = ({ setUser, users, count, setCount }) => {
+const InputArea = ({ setTodos, todos, count, setCount }) => {
   const [input, setInput] = useState({ title: "", body: "" });
 
   const handleInput = (e) => {
@@ -12,8 +12,8 @@ const InputArea = ({ setUser, users, count, setCount }) => {
     e.preventDefault();
     const { title, body } = input;
     if (title !== "" && body !== "") {
-      setUser([
-        ...users,
+      setTodos([
+        ...todos,
         {
           ...input,
           id: count,

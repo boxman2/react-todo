@@ -1,11 +1,11 @@
 import React from "react";
 
-const Done = ({ user, setUser, state }) => {
+const Done = ({ user, setTodos, state }) => {
   const deleteDone = (num) => {
-    setUser((item) => item.filter((user) => num !== user.id));
+    setTodos((item) => item.filter((user) => num !== user.id));
   };
   const completeDone = (num) => {
-    setUser((item) =>
+    setTodos((item) =>
       item.map((user) =>
         user.id === num ? { ...user, isDone: !user.isDone } : user
       )
