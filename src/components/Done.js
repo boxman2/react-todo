@@ -1,5 +1,6 @@
 import React, { useContext } from "react";
 import { ThemeContext } from "../context/ThemeContext";
+import { Link } from "react-router-dom";
 
 const Done = ({ user, state }) => {
   const { setTodos } = useContext(ThemeContext);
@@ -17,6 +18,9 @@ const Done = ({ user, state }) => {
   };
   return (
     <div className={isDone ? "box red" : "box"}>
+      <Link className="link" to={`/${id}`}>
+        상세보기{" "}
+      </Link>
       <h2>{title}</h2>
       <div>{body}</div>
       <div className="buttons">

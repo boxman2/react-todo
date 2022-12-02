@@ -107,3 +107,33 @@ h2 {
   border : 3px solid red;
   background-color: #eee;
 }
+.link {
+  text-decoration: none;
+  color: teal;
+  display:flex;
+  justify-content: right;
+}
+.detail-box {
+  border: 2px solid rgb(238,238,238);
+  border-radius : 10px;
+  padding: 12px 24px 24px 24px;
+  width: 600px;
+  height:400px;
+  display:flex;
+  flex-direction:column;
+  margin:130px auto 0px auto ;
+}
+
+.space-between{
+  display:flex;
+  justify-content: space-between;
+}
+
+.detail-box button {
+  background-color:rgb(255,255,255);
+  border-radius: 12px;
+  width:120px;
+  height:40px;
+  border : 2px solid rgb(238,238,238);
+  cursor :pointer
+}

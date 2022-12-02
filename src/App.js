@@ -1,9 +1,11 @@
 import { useState, useEffect } from "react";
 import "./App.css";
 import Navbar from "./components/Navbar";
-import Body from "./components/Body";
-import InputArea from "./components/InputArea";
+
+import Homepage from "./page/Homepage";
+import Aboutpage from "./page/Aboutpage";
 import { ThemeContext } from "./context/ThemeContext";
+import { Routes, Route } from "react-router-dom";
 
 function App() {
   const item = JSON.parse(localStorage.getItem("todo"));
@@ -21,8 +23,10 @@ function App() {
     <ThemeContext.Provider value={{ todos, setTodos, count, setCount }}>
       <div className="layout">
         <Navbar />
-        <InputArea />
-        <Body />
+        <Routes>
+          <Route path="/" element={<Homepage />} />
+          <Route path="/:id" element={<Aboutpage />} />
+        </Routes>
       </div>
     </ThemeContext.Provider>
   );
