@@ -9,13 +9,13 @@ const Aboutpage = () => {
   const goHomePage = () => {
     navigate("/");
   };
-  const [{ title, body }] = todos.filter((item) => item.id === id);
+  const [{ title, body }] = todos.filter((item) => item.id === parseInt(id));
 
   return (
     <div className="detail-box">
       <div className="space-between">
         <div>ID : {id}</div>
-        <button onClick={goHomePage}>이전으로</button>
+        <button onClick={goHomePage}>이전 으로</button>
       </div>
       <h1>{title}</h1>
       <div>{body}</div>
